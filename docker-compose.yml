@@ -1,0 +1,25 @@
+services:
+  web:
+    build: ./docker
+    container_name: przewody_web
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    container_name: przewody_db
+    restart: always
+    environment:
+      POSTGRES_DB: przewody
+      POSTGRES_USER: przewody_user
+      POSTGRES_PASSWORD: przewody_pass
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
