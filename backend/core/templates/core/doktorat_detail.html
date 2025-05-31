@@ -9,3 +9,11 @@
 </ul>
 <a href="{% url 'doktorat_list' %}" class="btn btn-secondary mt-3">← Powrót do listy</a>
 {% endblock %}
+
+{% for dokument in object.dokumentwniosekuchwala_set.all %}
+    <li>
+        <a href="{{ dokument.plik.url }}" target="_blank">{{ dokument.numer }}</a>
+    </li>
+{% empty %}
+    <li>Brak dokumentów.</li>
+{% endfor %}

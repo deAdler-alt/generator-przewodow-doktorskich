@@ -27,3 +27,11 @@
   </tbody>
 </table>
 {% endblock %}
+
+{% for dokument in object.dokumentwniosekuchwala_set.all %}
+    <li>
+        <a href="{{ dokument.plik.url }}" target="_blank">{{ dokument.numer }}</a>
+    </li>
+{% empty %}
+    <li>Brak dokumentów.</li>
+{% endfor %}
