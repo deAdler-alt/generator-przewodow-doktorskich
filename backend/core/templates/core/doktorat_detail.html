@@ -1,0 +1,11 @@
+{% extends "core/base.html" %}
+{% block title %}Szczegóły doktoratu{% endblock %}
+{% block content %}
+<h2>{{ object.tytul }}</h2>
+<ul class="list-group">
+  <li class="list-group-item"><strong>Doktorant:</strong> {{ object.doktorant }}</li>
+  <li class="list-group-item"><strong>Promotor:</strong> {{ object.promotor }}</li>
+  <li class="list-group-item"><strong>Komentarz:</strong> {{ object.komentarz }}</li>
+</ul>
+<a href="{% url 'doktorat_list' %}" class="btn btn-secondary mt-3">← Powrót do listy</a>
+{% endblock %}

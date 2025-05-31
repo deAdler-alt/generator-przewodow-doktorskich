@@ -1,0 +1,9 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<h2>{{ object.tytul }}</h2>
+<p><strong>Doktorant:</strong> {{ object.doktorant }}</p>
+<p><strong>Promotor:</strong> {{ object.promotor }}</p>
+<p><strong>Komentarz:</strong> {{ object.komentarz }}</p>
+<a href="{% url 'doktorat_list' %}">← Powrót do listy</a>
+{% endblock %}

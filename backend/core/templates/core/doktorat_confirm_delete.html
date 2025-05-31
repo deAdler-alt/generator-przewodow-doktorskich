@@ -1,0 +1,10 @@
+{% extends "core/base.html" %}
+{% block title %}Usuń doktorat{% endblock %}
+{% block content %}
+<h2>Czy na pewno chcesz usunąć "{{ object.tytul }}"?</h2>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger">Tak, usuń</button>
+  <a href="{% url 'doktorat_list' %}" class="btn btn-secondary">Anuluj</a>
+</form>
+{% endblock %}
